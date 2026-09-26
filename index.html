@@ -33,6 +33,7 @@
     .arrow{font-size:34px;font-weight:300}
     .blue{background:#dceeff} .pink{background:#ffe3e8} .green{background:#e2f3e6}
     .purple{background:#e7e2ff} .yellow{background:#fff1c9} .mint{background:#dff4ef}
+    .persona-wide{grid-column:1/-1}
     .banner{margin-top:18px;border-radius:18px;padding:22px;background:linear-gradient(135deg,#172330,#314656);color:white}
     .banner strong{display:block;font-size:28px;line-height:1.05;margin-bottom:8px}
     .banner span{color:#dce2e6}
@@ -40,9 +41,9 @@
     @media(max-width:640px){
       .hero{padding-left:18px;padding-right:18px}
       main{padding:18px 14px 28px}
-      .grid{grid-template-columns:1fr;gap:11px}
-      .card{min-height:104px;padding:15px;grid-template-columns:50px 1fr 20px}
-      .copy strong{font-size:17px} .copy span{font-size:13px}
+      .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+      .card{min-height:112px;padding:12px 10px;grid-template-columns:1fr;gap:6px;text-align:center;align-content:center}
+      .ico{font-size:28px}.copy strong{font-size:14px;line-height:1.1}.copy span{font-size:11px;line-height:1.2}.arrow{display:none}
       .banner strong{font-size:24px}
     }
   </style>
@@ -57,36 +58,29 @@
   <main>
     <h1>¡Hola!</h1>
     <p class="intro">Aquí encontrarás las herramientas del Modelo Cultural ECO.</p>
-    <section class="grid"><a class="card blue" href="https://script.google.com/macros/s/AKfycbwVc9C_FjO3FIoExhQmbmTb1W9lG9tEXowp3uJwD5T7BTdXPAdglYf_6cBlsoIPpgHW6w/exec" aria-label="Evaluación de Líderes 2027">
-      <div class="ico">👥</div>
-      <div class="copy"><strong>Evaluación de Líderes 2027</strong><span>Tu opinión impulsa mejores líderes.</span></div>
-      <div class="arrow">›</div>
-    </a>
-<a class="card pink" href="https://script.google.com/macros/s/AKfycbyV3v46Z4AfR2n4jxIPsKSeniYSd-csabPLtgfl5yxBmUXdp7J6Sm_EAWNo4mBEmxn3/exec" aria-label="Administración de Líderes">
-      <div class="ico">⚙️</div>
-      <div class="copy"><strong>Administración de Líderes</strong><span>Gestiona la información de tu equipo.</span></div>
-      <div class="arrow">›</div>
-    </a>
-<a class="card green" href="https://script.google.com/macros/s/AKfycbyyCszva4Kd3GjyeRquWqkMAXrChlEV7k6xouxcIupj8eQfgwkLwUcHwTraERBuxLT4/exec" aria-label="Editor del Modelo Cultural">
-      <div class="ico">📝</div>
-      <div class="copy"><strong>Editor del Modelo Cultural</strong><span>Desarrolla y actualiza el contenido.</span></div>
-      <div class="arrow">›</div>
-    </a>
-<a class="card purple" href="https://script.google.com/macros/s/AKfycbxTui49EquNFCTt-h0Nv_q0yXWSGqpW8rdqf0gqFptFxAyZPmCQS3dhIPHxO4MLHrIV/exec" aria-label="Dashboard Ejecutivo">
-      <div class="ico">▥</div>
-      <div class="copy"><strong>Dashboard Ejecutivo</strong><span>Información clave para la toma de decisiones.</span></div>
-      <div class="arrow">›</div>
-    </a>
-<a class="card yellow" href="https://script.google.com/macros/s/AKfycbyOpnMMsxWS2IUGZv-C00_dCzVudIj8ALtA3SkKn6IspXj98ALnMX0O-HfGWa2Q9HOY/exec" aria-label="Autoevaluación">
-      <div class="ico">☑️</div>
-      <div class="copy"><strong>Autoevaluación</strong><span>Conócete, reflexiona y sigue creciendo.</span></div>
-      <div class="arrow">›</div>
-    </a>
-<a class="card mint" href="https://script.google.com/macros/s/AKfycbyNdB0GiEY80Km9ZWxsvamW0YPOPSxCtvLwdozxf6LT3zDCWVm3SbJPCzwfhykXIlO9/exec" aria-label="Persona ECO">
-      <div class="ico">↗</div>
-      <div class="copy"><strong>Persona ECO</strong><span>Tu ruta personal de crecimiento.</span></div>
-      <div class="arrow">›</div>
-    </a></section>
+    <section class="grid">
+      <a class="card purple" href="https://script.google.com/macros/s/AKfycbxTui49EquNFCTt-h0Nv_q0yXWSGqpW8rdqf0gqFptFxAyZPmCQS3dhIPHxO4MLHrIV/exec" aria-label="Dashboard Ejecutivo">
+        <div class="ico">▥</div><div class="copy"><strong>Dashboard Ejecutivo</strong><span>Información clave para la toma de decisiones.</span></div><div class="arrow">›</div>
+      </a>
+      <a class="card blue" href="https://script.google.com/macros/s/AKfycbypyILYe_uB6zpAkV0HRwrejqZ2YPr-nvh10TwkInO9Z3L1BM1kUKZT7tiHuoDn2QyT/exec" aria-label="Seguimiento de actividades">
+        <div class="ico">📊</div><div class="copy"><strong>Seguimiento de actividades</strong><span>Consulta avances, cumplimiento y seguimiento.</span></div><div class="arrow">›</div>
+      </a>
+      <a class="card green" href="https://script.google.com/macros/s/AKfycbyyCszva4Kd3GjyeRquWqkMAXrChlEV7k6xouxcIupj8eQfgwkLwUcHwTraERBuxLT4/exec" aria-label="Editor Modelo Cultural">
+        <div class="ico">📝</div><div class="copy"><strong>Editor Modelo Cultural</strong><span>Desarrolla y actualiza el contenido.</span></div><div class="arrow">›</div>
+      </a>
+      <a class="card pink" href="https://script.google.com/macros/s/AKfycbyV3v46Z4AfR2n4jxIPsKSeniYSd-csabPLtgfl5yxBmUXdp7J6Sm_EAWNo4mBEmxn3/exec" aria-label="Administración de Líderes">
+        <div class="ico">⚙️</div><div class="copy"><strong>Administración de Líderes</strong><span>Gestiona la información de tu equipo.</span></div><div class="arrow">›</div>
+      </a>
+      <a class="card yellow" href="https://script.google.com/macros/s/AKfycbyOpnMMsxWS2IUGZv-C00_dCzVudIj8ALtA3SkKn6IspXj98ALnMX0O-HfGWa2Q9HOY/exec" aria-label="Autoevaluación">
+        <div class="ico">☑️</div><div class="copy"><strong>Autoevaluación</strong><span>Conócete, reflexiona y sigue creciendo.</span></div><div class="arrow">›</div>
+      </a>
+      <a class="card mint" href="https://script.google.com/macros/s/AKfycbwVc9C_FjO3FIoExhQmbmTb1W9lG9tEXowp3uJwD5T7BTdXPAdglYf_6cBlsoIPpgHW6w/exec" aria-label="Evaluación 2027">
+        <div class="ico">👥</div><div class="copy"><strong>Evaluación 2027</strong><span>Tu opinión impulsa mejores líderes.</span></div><div class="arrow">›</div>
+      </a>
+      <a class="card persona-wide" href="https://script.google.com/macros/s/AKfycbyNdB0GiEY80Km9ZWxsvamW0YPOPSxCtvLwdozxf6LT3zDCWVm3SbJPCzwfhykXIlO9/exec" aria-label="Persona ECO">
+        <div class="ico">↗</div><div class="copy"><strong>Persona ECO</strong><span>Tu ruta personal de crecimiento.</span></div><div class="arrow">›</div>
+      </a>
+    </section>
     <section class="banner"><strong>Liderar<br>también es servir</strong><span>Modelo Cultural ECO · Personas que inspiran resultados extraordinarios</span></section>
   </main>
   <footer>JUNTOS HACEMOS MÁS</footer>

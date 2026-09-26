@@ -1,17 +1,5 @@
-PORTAL PERSONAS ECO
+Portal Personas ECO — versión actualizada
 
-Archivos:
-- index.html: portal
-- manifest.json: instalación tipo PWA
-- sw.js: caché básico del portal
-- assets/: iconos y logotipo oficial
+Incluye 7 accesos, diseño de 2 botones por fila también en celular, Persona ECO a ancho completo, nuevo icono de aplicación y caché PWA v2.
 
-Para probar localmente:
-1. Abra esta carpeta con Visual Studio Code.
-2. Use Live Server sobre index.html.
-3. Los seis botones abrirán las aplicaciones actuales.
-
-Para instalar como app en iPhone/iPad:
-1. Primero publique esta carpeta en un alojamiento HTTPS.
-2. Abra la URL publicada en Safari.
-3. Use Compartir > Añadir a pantalla de inicio / Agregar a inicio.
+Para actualizar GitHub Pages, sustituye el contenido del repositorio por estos archivos manteniendo la misma estructura.

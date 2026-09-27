@@ -1,5 +1,7 @@
-Portal Personas ECO — versión actualizada
+PERSONA ECO — ACCESO DIRECTO
 
-Incluye 7 accesos, diseño de 2 botones por fila también en celular, Persona ECO a ancho completo, nuevo icono de aplicación y caché PWA v2.
+Esta PWA funciona únicamente como acceso directo a la Web App de Persona ECO en Google Apps Script.
+Al abrirla, redirige automáticamente a Persona ECO.
+El icono instalado será Persona ECO (rojo).
 
-Para actualizar GitHub Pages, sustituye el contenido del repositorio por estos archivos manteniendo la misma estructura.
+Puede usarse en el repositorio actual de Persona ECO si se desea conservar su URL de GitHub Pages como acceso instalado.

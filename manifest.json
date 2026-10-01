@@ -1,14 +1,24 @@
 {
-  "name":"Persona ECO",
-  "short_name":"Persona ECO",
-  "description":"Acceso directo a Persona ECO",
-  "start_url":"./",
-  "scope":"./",
-  "display":"standalone",
-  "background_color":"#ffffff",
-  "theme_color":"#d50012",
-  "icons":[
-    {"src":"assets/icon-192.png","sizes":"192x192","type":"image/png","purpose":"any maskable"},
-    {"src":"assets/icon-512.png","sizes":"512x512","type":"image/png","purpose":"any maskable"}
+  "id": "/familiaECO/",
+  "name": "Familia ECO",
+  "short_name": "Familia ECO",
+  "start_url": "/familiaECO/",
+  "scope": "/familiaECO/",
+  "display": "standalone",
+  "background_color": "#f4f4f4",
+  "theme_color": "#2e7d32",
+  "icons": [
+    {
+      "src": "/familiaECO/assets/icon-192.png?v=4",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/familiaECO/assets/icon-512.png?v=4",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
   ]
 }

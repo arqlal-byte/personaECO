@@ -10,18 +10,35 @@
   <title>Persona ECO</title>
   <link rel="manifest" href="manifest.json">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-  <meta http-equiv="refresh" content="0;url=https://script.google.com/macros/s/AKfycbyNdB0GiEY80Km9ZWxsvamW0YPOPSxCtvLwdozxf6LT3zDCWVm3SbJPCzwfhykXIlO9/exec">
   <style>html,body{margin:0;height:100%;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;background:#fff}body{display:grid;place-items:center}.wrap{text-align:center;padding:24px}.wrap img{width:128px;border-radius:28px}.wrap p{color:#555}.wrap a{color:#b80010}</style>
 </head>
 <body>
   <div class="wrap">
     <img src="assets/icon-192.png" alt="Persona ECO">
     <p>Abriendo Persona ECO…</p>
-    <a href="https://script.google.com/macros/s/AKfycbyNdB0GiEY80Km9ZWxsvamW0YPOPSxCtvLwdozxf6LT3zDCWVm3SbJPCzwfhykXIlO9/exec">Continuar</a>
+    <a id="continuar" href="#">Continuar</a>
   </div>
   <script>
     if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js').catch(()=>{});
-    window.location.replace('https://script.google.com/macros/s/AKfycbyNdB0GiEY80Km9ZWxsvamW0YPOPSxCtvLwdozxf6LT3zDCWVm3SbJPCzwfhykXIlO9/exec');
+
+    const APP_URL='https://script.google.com/macros/s/AKfycbyNdB0GiEY80Km9ZWxsvamW0YPOPSxCtvLwdozxf6LT3zDCWVm3SbJPCzwfhykXIlO9/exec';
+    const ACCESS_KEY_STORAGE='personaEcoLauncherAccessKey';
+
+    function crearClaveAcceso(){
+      const bytes=new Uint8Array(32);
+      crypto.getRandomValues(bytes);
+      return Array.from(bytes,b=>b.toString(16).padStart(2,'0')).join('');
+    }
+
+    let accessKey=localStorage.getItem(ACCESS_KEY_STORAGE)||'';
+    if(!/^[a-f0-9]{64}$/.test(accessKey)){
+      accessKey=crearClaveAcceso();
+      localStorage.setItem(ACCESS_KEY_STORAGE,accessKey);
+    }
+
+    const destino=APP_URL+'?acceso='+encodeURIComponent(accessKey);
+    document.getElementById('continuar').href=destino;
+    window.location.replace(destino);
   </script>
 </body>
 </html>

@@ -76,13 +76,10 @@ if (standalone) {
 </script>
 
 <script>
-(function() {
-  var instalada =
-    window.matchMedia('(display-mode: standalone)').matches ||
-    window.navigator.standalone === true;
-  if (instalada) {
-    window.location.replace("https://script.google.com/macros/s/AKfycbyNdB0GiEY80Km9ZWxsvamW0YPOPSxCtvLwdozxf6LT3zDCWVm3SbJPCzwfhykXIlO9/exec");
-  }
+(function(){
+  var instalada = window.matchMedia('(display-mode: standalone)').matches ||
+                  window.navigator.standalone === true;
+  if(instalada) window.location.replace("https://script.google.com/macros/s/AKfycbyNdB0GiEY80Km9ZWxsvamW0YPOPSxCtvLwdozxf6LT3zDCWVm3SbJPCzwfhykXIlO9/exec");
 })();
 </script>
 

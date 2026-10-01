@@ -1,4 +1,3 @@
-const CACHE='persona-eco-launcher-v1';
-self.addEventListener('install',e=>{self.skipWaiting();});
-self.addEventListener('activate',e=>{e.waitUntil(self.clients.claim());});
-self.addEventListener('fetch',()=>{});
+self.addEventListener('install',function(){self.skipWaiting();});
+self.addEventListener('activate',function(event){event.waitUntil(self.clients.claim());});
+self.addEventListener('fetch',function(){});

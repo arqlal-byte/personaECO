@@ -1,0 +1,10 @@
+{
+  "name": "Persona ECO",
+  "short_name": "Persona ECO",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f4f4f4",
+  "theme_color": "#ffffff",
+  "description": "Acceso a Persona ECO"
+}

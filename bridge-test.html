@@ -21,7 +21,7 @@ iframe{width:1px;height:1px;position:absolute;left:-9999px;border:0}
 <iframe id="bridge" title="Persona ECO Bridge" src="https://script.google.com/macros/s/AKfycbyNdB0GiEY80Km9ZWxsvamW0YPOPSxCtvLwdozxf6LT3zDCWVm3SbJPCzwfhykXIlO9/exec?bridge=1"></iframe>
 <script>
 const statusEl=document.getElementById('status');
-const BRIDGE_ORIGIN='https://script.google.com';
+const BRIDGE_ORIGIN='*';
 let sent=false;
 function sendPing(){
  if(sent)return; sent=true;
@@ -34,6 +34,9 @@ function sendPing(){
  statusEl.textContent='Puente cargado. Verificando API…';
 }
 window.addEventListener('message',e=>{
+ // Apps Script HTML Service se ejecuta finalmente en googleusercontent.com.
+ // La respuesta se acepta solo si proviene del iframe Bridge que nosotros cargamos.
+ if(e.source!==document.getElementById('bridge').contentWindow)return;
  const m=e.data||{};
  if(m.type==='PERSONA_ECO_BRIDGE_READY'){sendPing();return;}
  if(m.type==='PERSONA_ECO_RESPONSE'&&m.id==='ping-1'){

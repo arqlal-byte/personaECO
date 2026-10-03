@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Persona ECO · Prueba de conexión</title>
+<style>
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;background:#f4f4f4;color:#203026;margin:0;padding:28px}
+.card{max-width:520px;margin:40px auto;background:#fff;border:1px solid #dde5df;border-radius:20px;padding:24px}
+h1{font-size:24px;margin:0 0 10px}.muted{color:#68736c}.status{margin-top:20px;padding:14px;border-radius:12px;background:#f1f5f2;font-weight:700}
+iframe{width:1px;height:1px;position:absolute;left:-9999px;border:0}
+</style>
+</head>
+<body>
+<main class="card">
+<h1>Persona ECO</h1>
+<p class="muted">Prueba técnica del puente GitHub ↔ Apps Script.</p>
+<div id="status" class="status">Conectando…</div>
+</main>
+<iframe id="bridge" title="Persona ECO Bridge" src="https://script.google.com/macros/s/AKfycbyNdB0GiEY80Km9ZWxsvamW0YPOPSxCtvLwdozxf6LT3zDCWVm3SbJPCzwfhykXIlO9/exec?bridge=1"></iframe>
+<script>
+const statusEl=document.getElementById('status');
+const BRIDGE_ORIGIN='https://script.google.com';
+let sent=false;
+function sendPing(){
+ if(sent)return; sent=true;
+ document.getElementById('bridge').contentWindow.postMessage({
+   type:'PERSONA_ECO_REQUEST',
+   id:'ping-1',
+   action:'ping',
+   payload:{}
+ },BRIDGE_ORIGIN);
+ statusEl.textContent='Puente cargado. Verificando API…';
+}
+window.addEventListener('message',e=>{
+ const m=e.data||{};
+ if(m.type==='PERSONA_ECO_BRIDGE_READY'){sendPing();return;}
+ if(m.type==='PERSONA_ECO_RESPONSE'&&m.id==='ping-1'){
+   statusEl.textContent=m.ok&&m.data&&m.data.ok
+     ?'✓ Conexión correcta: GitHub ↔ Apps Script'
+     :'No fue posible validar la conexión.';
+ }
+});
+setTimeout(()=>{if(!sent)statusEl.textContent='El puente no respondió. Revisa que la implementación nueva de Apps Script esté activa.';},10000);
+</script>
+</body>
+</html>

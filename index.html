@@ -8,10 +8,10 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="Persona ECO">
 <title>Persona ECO</title>
-<link rel="manifest" href="./manifest.json?v=5">
-<link rel="apple-touch-icon" href="./assets/apple-touch-icon.png?v=5">
-<link rel="icon" type="image/png" sizes="192x192" href="./assets/icon-192.png?v=5">
-<link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32.png?v=5">
+<link rel="manifest" href="./manifest.json?v=6">
+<link rel="apple-touch-icon" href="./assets/apple-touch-icon.png?v=6">
+<link rel="icon" type="image/png" sizes="192x192" href="./assets/icon-192.png?v=6">
+<link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32.png?v=6">
 <style>
 *{box-sizing:border-box}
 html,body{margin:0;min-height:100%;background:#f4f4f4;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;color:#203026}
@@ -30,61 +30,35 @@ h1{margin:0;font-size:29px;line-height:1.1}
 .share{font-size:25px;line-height:1;font-weight:600}
 .menu{font-size:27px;line-height:1;font-weight:800;letter-spacing:1px}
 .once{margin:18px 0 4px;color:#657069;font-size:14px}
-#appframe{display:none;border:0;width:100%;height:100%;position:absolute;inset:0;background:#fff}
 @media(min-width:700px){body{padding-top:42px}}
 </style>
 </head>
 <body>
 <main id="install">
-  <img class="logo" src="./assets/icon-192.png?v=5" alt="Persona ECO">
+  <img class="logo" src="./assets/icon-192.png?v=6" alt="Persona ECO">
   <h1>Instala Persona ECO</h1>
   <p class="lead">Ten acceso directo desde tu celular. Solo necesitas hacerlo una vez.</p>
-
   <section class="guide">
-    <div class="guide-head">
-      <div class="badge">□↑</div>
-      <div><h2>iPhone / iPad</h2><small>Desde Safari</small></div>
-    </div>
+    <div class="guide-head"><div class="badge">□↑</div><div><h2>iPhone / iPad</h2><small>Desde Safari</small></div></div>
     <div class="step"><span class="n">1</span><span>Pulsa el botón <strong>Compartir</strong> <span class="share">□↑</span></span></div>
     <div class="step"><span class="n">2</span><span>Selecciona <strong>“Añadir a pantalla de inicio”</strong>.</span></div>
     <div class="step"><span class="n">3</span><span>Pulsa <strong>“Añadir”</strong>.</span></div>
   </section>
-
   <section class="guide">
-    <div class="guide-head">
-      <div class="badge menu">⋮</div>
-      <div><h2>Android</h2><small>Desde Chrome</small></div>
-    </div>
+    <div class="guide-head"><div class="badge menu">⋮</div><div><h2>Android</h2><small>Desde Chrome</small></div></div>
     <div class="step"><span class="n">1</span><span>Pulsa el menú <strong class="menu">⋮</strong> del navegador.</span></div>
     <div class="step"><span class="n">2</span><span>Selecciona <strong>“Instalar aplicación”</strong> o <strong>“Añadir a pantalla de inicio”</strong>.</span></div>
     <div class="step"><span class="n">3</span><span>Confirma <strong>“Instalar”</strong>.</span></div>
   </section>
-
   <p class="once">Después abre Persona ECO desde el nuevo icono de tu pantalla.</p>
 </main>
-
-
 <script>
-const standalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
-if (standalone) {
-  document.body.style.padding='0';
-  document.getElementById('install').style.display='none';
-  const f=document.getElementById('appframe');
-  f.style.display='block';
-  f.src='https://script.google.com/macros/s/AKfycbyNdB0GiEY80Km9ZWxsvamW0YPOPSxCtvLwdozxf6LT3zDCWVm3SbJPCzwfhykXIlO9/exec';
-}
-</script>
-
-<script id="persona-eco-standalone-launch">
-(function () {
-  var instalada =
-    window.matchMedia('(display-mode: standalone)').matches ||
-    window.navigator.standalone === true;
-  if (instalada) {
-    window.location.replace("https://script.google.com/macros/s/AKfycbyNdB0GiEY80Km9ZWxsvamW0YPOPSxCtvLwdozxf6LT3zDCWVm3SbJPCzwfhykXIlO9/exec");
+(function(){
+  const standalone=window.matchMedia('(display-mode: standalone)').matches||window.navigator.standalone===true;
+  if(standalone){
+    window.location.replace('https://script.google.com/macros/s/AKfycbyNdB0GiEY80Km9ZWxsvamW0YPOPSxCtvLwdozxf6LT3zDCWVm3SbJPCzwfhykXIlO9/exec');
   }
 })();
 </script>
-
 </body>
 </html>
